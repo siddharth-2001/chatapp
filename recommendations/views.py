@@ -6,7 +6,7 @@ import json
 
 
 
-class ReccomendView(views.APIView):
+class RecommendView(views.APIView):
 
     def get(self,request,p_user_id,format=None):
 
@@ -51,11 +51,4 @@ class ReccomendView(views.APIView):
         for user in l_recommendation_list:
             l_result.append(l_users_list[user["id"] - 1])
 
-        return response.Response(l_result[0:5], status=status.HTTP_200_OK)
-
-
-
-
-
-
-        
+        return response.Response(l_result[0:5], status=status.HTTP_200_OK)  

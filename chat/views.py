@@ -62,10 +62,13 @@ class SendMessageView(views.APIView):
             l_chat_room = ChatRoom.objects.get(user1 = request.user, user2 = l_recipient)
 
         except exceptions.ObjectDoesNotExist:
-            l_chat_room = ChatRoom.objects.get(user2 = request.user, user1 = l_recipient)
+            try:
 
-        if l_chat_room is None:
-            return Response({"status" : "Initiate a chat with this user first"}, status=status.HTTP_400_BAD_REQUEST)
+                l_chat_room = ChatRoom.objects.get(user2 = request.user, user1 = l_recipient)
+            
+            except:
+
+                return Response({"status" : "Initiate a chat with this user first"}, status=status.HTTP_400_BAD_REQUEST)            
         
 
         room_group_name = 'chat_' + l_chat_room.room_name
