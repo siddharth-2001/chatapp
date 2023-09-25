@@ -28,5 +28,7 @@
 - Recommended friends: GET /api/suggested–friends/<user_id>
 Get recommended friends for the given user id.
 
+The recommendation algorithm runs in the complexity of O(Nlog N)
+
   
 
