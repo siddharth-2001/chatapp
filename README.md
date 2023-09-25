@@ -3,6 +3,8 @@
 ## Endpoints
 
 # User
+- /api/online-users/ (GET)
+  Get a list of all the online uses.
 - /api/register/ (POST)
   ~ Post these value
   ~ name, phone, password (All of them are strings)
@@ -22,5 +24,9 @@
 
   - api/chat/send/ (POST)
     Post "message" and "recipient", the recipient is the phone number of the recipient user.
+# Recommendation
+- Recommended friends: GET /api/suggested–friends/<user_id>
+Get recommended friends for the given user id.
+
   
 
