@@ -18,6 +18,9 @@
     ~ Post "recipient" and make sure you have added your auth token in the headers.
     ~ Output: chat room name will be returned on successful request we can now use this to chat with the other user.
   - api/chat/lobby/{chat-room-name}/{token}/ (WEBSOCKET)
-    ~ Opens a simple html page to start chat
+    ~ Opens a simple html page to start chat. Only the allowed users in the specific chat room can join. You need to create a chat with an online user to access this page.
+
+  - api/chat/send/ (POST)
+    Post "message" and "recipient", the recipient is the phone number of the recipient user.
   
 
